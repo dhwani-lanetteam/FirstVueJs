@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-1 container card pb-1">
+  <div class="mt-1 col-md-6 container card pb-1">
     <div class="row">
       <div class="col-md-12 title">
         <!-- Fetch query param from route -->
@@ -11,7 +11,8 @@
         <b-form>
           <b-form-group id="ig-firstname"
                         label="First Name:">
-            <b-form-input id="first-name"
+            <b-form-input id="firstname"
+                          v-model="form.firstname"
                           type="text"
                           placeholder="Enter first name">
             </b-form-input>
@@ -19,38 +20,37 @@
           
           <b-form-group id="ig-lastname"
                         label="Last Name:">
-            <b-form-input id="last-name"
+            <b-form-input id="lastname"
+                          v-model="form.lastname"
                           type="text"
                           placeholder="Enter last name"
             ></b-form-input>
           </b-form-group>
-  
+          
           <b-form-group id="ig-email"
                         label="Email:">
             <b-form-input id="email"
+                          v-model="form.email"
                           type="text"
                           placeholder="Enter email"
             ></b-form-input>
           </b-form-group>
-  
+          
           <b-form-group id="ig-password"
                         label="Last Name:">
             <b-form-input id="password"
+                          v-model="form.password"
                           type="text"
                           placeholder="Enter password"
             ></b-form-input>
           </b-form-group>
-  
+          
           <b-form-group id="ig-fav-food"
                         label="Food:"
                         label-for="input-3">
-            <b-form-select id="fav-food">
-              <option :value = "null" selected>Select your favourite</option>
-              <option value ="grapes">Grapes</option>
-              <option value ="strawberry">Strawberry</option>
-              <option value ="apple">Apple</option>
-              <option value ="banana">Banana</option>
-              <option value ="orange">Orange</option>
+            <b-form-select id="fav-food"
+                           :options="fruits"
+                           v-model="form.favourite_food">
             </b-form-select>
           </b-form-group>
           
@@ -64,7 +64,7 @@
               <b-form-checkbox value="house_decor">House decor</b-form-checkbox>
             </b-form-checkbox-group>
           </b-form-group>
-  
+          
           <b-form-group id="ig-gender"
                         label-for="gender"
                         label="Gender:">
@@ -85,7 +85,21 @@
 
 <script>
   export default {
-    name: 'Registration'
+    name: 'Registration',
+    data() {
+      return {
+        form:{
+          'firstname': '',
+          'lastname': '',
+          'email': '',
+          'password': '',
+          'favourite_food': null,
+          'hobby': 'house_decor',
+          'gender': 'female'
+        },
+        fruits: [{ text: 'Select Your Favourite Food', value: null }, 'grapes', 'strawberry', 'apple', 'banana', 'orange'],
+      }
+    },
   }
 </script>
 

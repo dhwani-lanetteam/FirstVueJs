@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-1 container">
+  <div class="mt-1 col-md-6 container card pb-1">
     <div class="row">
       <div class="col-md-12 title">
         <!-- Fetch query param from route -->
@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="mt-1 col-md-12">
+      <div class="mt-3 col-md-12">
         <b-form>
           <b-form-group id="input-group-email"
                         label="Email address:"
