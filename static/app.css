@@ -27,12 +27,14 @@ nav .container {
 nav .nav__left {
   flex-grow: 3;
   display: flex;
+  margin-bottom: 0;
 }
 
 nav .nav__right {
   flex-grow: 2;
   display: flex;
   flex-direction: row-reverse;
+  margin-bottom: 0;
 }
 
 nav li a {

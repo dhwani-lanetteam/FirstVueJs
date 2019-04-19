@@ -8,6 +8,8 @@ import SingleTemplate from '../components/SingleTemplate';
 import AdminRoute from './admin-route';
 import Details from '../pages/Details';
 import Cart from '../pages/Cart';
+import Login from '../pages/Login/Login';
+import Registration from '../pages/Login/Registration';
 
 Vue.use(Router);
 
@@ -15,8 +17,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Signin',
+      component: Login
+    },
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: Registration
     },
     {
       path: '/single',
